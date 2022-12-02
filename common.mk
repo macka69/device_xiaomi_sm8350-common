@@ -96,7 +96,6 @@ PRODUCT_PACKAGES += \
     libbthost_if
 
 PRODUCT_PACKAGES += \
-
     android.hardware.bluetooth@1.0.vendor \
     android.hardware.bluetooth.audio-impl \
     com.dsi.ant@1.0.vendor \
@@ -383,7 +382,6 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
