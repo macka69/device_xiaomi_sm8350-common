@@ -97,6 +97,9 @@ function blob_fixup() {
             hexdump -ve '1/1 "%.2X"' "${2}" | sed "s/5E070094881640F9/1F2003D5881640F9/g; s/AA060094881640F9/1F2003D5881640F9/g" | xxd -r -p > "${TMPDIR}/${1##*/}"
             mv "${TMPDIR}/${1##*/}" "${2}"
             ;;
+        lib64/libcameraservice.so)
+            "${PATCHELF}" --add-needed "libcameraservice_shim.so" "${2}"
+            ;;
     esac
 }
 
