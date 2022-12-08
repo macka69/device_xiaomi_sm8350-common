@@ -470,6 +470,19 @@ Return<int32_t> BiometricsFingerprint::extCmd(int32_t cmd, int32_t param) {
     return mDevice->extCmd(mDevice, cmd, param);
 }
 
+Return<bool> BiometricsFingerprint::isUdfps(uint32_t /* sensorId */) {
+    return true;
+}
+
+Return<void> BiometricsFingerprint::onFingerDown(uint32_t /* x */, uint32_t /* y */,
+                                                float /* minor */, float /* major */) {
+    return Void();
+}
+
+Return<void> BiometricsFingerprint::onFingerUp() {
+    return Void();
+}
+
 }  // namespace implementation
 }  // namespace V2_3
 }  // namespace fingerprint
